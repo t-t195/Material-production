@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* =====================================================
+   base.css — スライド共通フレーム（全スライドで読み込む）
+   1スライド = 1536 x 864 px 固定（16:9）
+   共通フレーム構成:
+     .slide > .stamp / .slide-header / .slide-message /
+              .slide-body / .slide-footer
+   ===================================================== */
+
+:root {
+  /* カラーパレット（この変数以外の色を勝手に増やさない） */
+  --c-primary: #1f4e79;        /* 濃紺: 見出し・ヘッダー */
+  --c-primary-mid: #2e75b6;    /* 中間の青: 図形・矢印 */
+  --c-primary-light: #dce6f1;  /* 淡青: 強調背景 */
+  --c-accent: #c00000;         /* 赤: 課題・警告・実施範囲 */
+  --c-text: #333333;
+  --c-gray: #595959;
+  --c-line: #bfbfbf;
+  --c-bg-gray: #f2f2f2;
+
+  /* フォントサイズの基準 */
+  --fs-title: 30px;
+  --fs-message: 19px;
+  --fs-body: 15px;
+  --fs-small: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { width: 1536px; height: 864px; }
+
+body {
+  /* 環境差による折り返しズレ防止のため日本語フォントを明示
+     （Mac: ヒラギノ → Windows: 游ゴシック → メイリオ の順にフォールバック） */
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+               "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+  color: var(--c-text);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  background: #fff;
+}
+
+/* ---- スライド外枠 ---- */
+.slide {
+  width: 1536px;
+  height: 864px;
+  overflow: hidden;            /* はみ出しによるレイアウト崩れ防止 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 56px 20px;
+  background: #fff;
+}
+
+/* ---- 見出し（青バー付き） ---- */
+.slide-header {
+  flex: none;
+  border-bottom: 2px solid var(--c-primary);
+  padding-bottom: 10px;
+}
+.slide-title {
+  display: flex; align-items: center; gap: 14px;
+  font-size: var(--fs-title); font-weight: bold;
+  color: var(--c-primary); line-height: 1.3;
+}
+.slide-title::before {
+  content: ""; flex: none;
+  width: 10px; height: 1.15em;
+  background: var(--c-primary);
+}
+
+/* ---- メッセージ行（このスライドの主張を1文で） ---- */
+.slide-message {
+  flex: none;
+  margin-top: 14px;
+  font-size: var(--fs-message); font-weight: bold; color: var(--c-text);
+}
+
+/* ---- 本文エリア ---- */
+.slide-body { flex: 1; min-height: 0; margin-top: 22px; }
+
+/* ---- フッター（出所・ページ番号） ---- */
+.slide-footer {
+  flex: none; margin-top: 12px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: var(--fs-small); color: var(--c-gray);
+}
+.slide-footer .page-no { font-size: 14px; }
+
+/* ---- 機密スタンプ（右上） ---- */
+.stamp {
+  position: absolute; top: 14px; right: 24px;
+  border: 1.5px solid var(--c-accent); color: var(--c-accent);
+  font-size: 13px; font-weight: bold;
+  padding: 2px 10px; letter-spacing: 2px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>スライド部品カタログ</title>
+<style>
+body { font-family: "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+       background: #ececec; padding: 24px; }
+h1 { font-size: 20px; margin-bottom: 4px; }
+p.lead { font-size: 13px; color: #555; margin-bottom: 20px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(490px, 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid #ccc; padding: 12px; }
+.card .frame { width: 460.8px; height: 259.2px; overflow: hidden; border: 1px solid #ddd; }
+.card iframe { width: 1536px; height: 864px; border: none;
+               transform: scale(0.3); transform-origin: top left; pointer-events: none; }
+.card a { display: block; margin-top: 8px; font-size: 14px; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>スライド部品カタログ</h1>
+<p class="lead">リンククリックで原寸（1536×864）表示。新しい部品を作ったらここに追加すること。</p>
+<div class="cards">
+  <div class="card"><div class="frame"><iframe src="00-cover.html"></iframe></div><a href="00-cover.html">00 表紙</a></div>
+  <div class="card"><div class="frame"><iframe src="01-structure-table.html"></iframe></div><a href="01-structure-table.html">01 構造表（縦書きヘッダー付き）</a></div>
+  <div class="card"><div class="frame"><iframe src="02-process-chevron.html"></iframe></div><a href="02-process-chevron.html">02 全体工程（シェブロン＋実施範囲）</a></div>
+  <div class="card"><div class="frame"><iframe src="03-logic-frame.html"></iframe></div><a href="03-logic-frame.html">03 論理フレーム（課題→ありたい姿→効果）</a></div>
+  <div class="card"><div class="frame"><iframe src="04-roi-bridge.html"></iframe></div><a href="04-roi-bridge.html">04 投資対効果（ブリッジチャート）</a></div>
+  <div class="card"><div class="frame"><iframe src="05-value-definition.html"></iframe></div><a href="05-value-definition.html">05 価値定義（タグ付き表）</a></div>
+  <div class="card"><div class="frame"><iframe src="06-phase-detail.html"></iframe></div><a href="06-phase-detail.html">06 詳細整理（フェーズ別詳細表）</a></div>
+</div>
+</body>
+</html>

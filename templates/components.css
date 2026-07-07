@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* =====================================================
+   components.css — スライド部品ライブラリ
+   base.css と併せて読み込む。見本は components/ 配下。
+   ===================================================== */
+
+/* ========== 汎用 ========== */
+.grid { display: grid; gap: 12px; }
+.box { border: 1px solid var(--c-line); padding: 12px 14px; background: #fff; }
+.box-head {
+  background: var(--c-primary); color: #fff; font-weight: bold;
+  text-align: center; padding: 6px 10px; font-size: 16px;
+}
+.note { font-size: var(--fs-small); color: var(--c-gray); }
+
+/* ========== 0. 表紙 ========== */
+.cover { padding: 60px 80px 48px; }
+.cover-client {
+  font-size: 24px; font-weight: bold;
+  border-bottom: 2px solid var(--c-text);
+  align-self: flex-start; padding-bottom: 4px;
+}
+.cover-center { text-align: center; }
+.cover-title {
+  display: inline-block; min-width: 980px;
+  font-size: 44px; font-weight: bold; color: var(--c-primary);
+  padding: 26px 40px;
+  border-top: 4px solid var(--c-primary);
+  border-bottom: 4px solid var(--c-primary);
+}
+.cover-sub { font-size: 22px; color: var(--c-gray); margin-top: 20px; }
+.cover-meta { text-align: right; font-size: 18px; line-height: 2; }
+
+/* ========== 1. 構造表（左端に青い縦書きヘッダー） ========== */
+.struct-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }
+.struct-table th, .struct-table td {
+  border: 1px solid var(--c-line); padding: 10px 14px;
+  vertical-align: top; text-align: left;
+}
+.struct-table .vhead {
+  writing-mode: vertical-rl; letter-spacing: 6px;
+  background: var(--c-primary); color: #fff; font-weight: bold;
+  text-align: center; vertical-align: middle; padding: 8px 0;
+}
+.struct-table .col-head {
+  background: var(--c-primary-light); color: var(--c-primary);
+  font-weight: bold; text-align: center; padding: 8px;
+}
+.struct-table .issue { color: var(--c-accent); font-weight: bold; }
+
+/* ========== 2. 全体工程（シェブロン矢印＋実施範囲） ========== */
+.chevron-row { display: flex; gap: 6px; }
+.chevron {
+  flex: 1; min-height: 84px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--c-primary-mid); color: #fff;
+  padding: 12px 30px 12px 36px; font-weight: bold; text-align: center;
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%,
+                     calc(100% - 26px) 100%, 0 100%, 26px 50%);
+}
+.chevron--first {
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%,
+                     calc(100% - 26px) 100%, 0 100%);
+}
+.chevron--dim { background: var(--c-line); }
+.chevron .sub { display: block; font-weight: normal; font-size: 12.5px; margin-top: 4px; }
+.scope-frame {
+  position: absolute; border: 3px solid var(--c-accent); pointer-events: none;
+}
+.scope-frame::after {
+  content: attr(data-label);
+  position: absolute; top: -32px; left: 50%; transform: translateX(-50%);
+  color: var(--c-accent); font-weight: bold; font-size: 17px; white-space: nowrap;
+}
+
+/* ========== 3. 論理フレーム（課題→ありたい姿→効果） ========== */
+.logic-frame { display: flex; align-items: stretch; height: 100%; }
+.logic-col { flex: 1; display: flex; flex-direction: column; border: 1px solid var(--c-line); }
+.logic-col .box-head { flex: none; }
+.logic-col .logic-body { flex: 1; padding: 18px; font-size: 16px; }
+.logic-arrow {
+  flex: none; align-self: center;
+  width: 52px; height: 64px; margin: 0 6px;
+  background: var(--c-gray);
+  clip-path: polygon(0 24%, 55% 24%, 55% 0, 100% 50%, 55% 100%, 55% 76%, 0 76%);
+}
+.issue-list { margin-left: 1.3em; }
+.issue-list li { color: var(--c-accent); font-weight: bold; margin-bottom: 14px; }
+.tobe { background: var(--c-primary-light); }
+.tobe .logic-body { color: var(--c-primary); font-weight: bold; }
+.check-list { list-style: none; }
+.check-list li { position: relative; padding-left: 1.6em; margin-bottom: 14px; }
+.check-list li::before {
+  content: "✓"; position: absolute; left: 0;
+  color: var(--c-primary-mid); font-weight: bold;
+}
+
+/* ========== 4. 投資対効果（試算条件＋ブリッジチャート） ========== */
+.roi-layout { display: grid; grid-template-columns: 480px 1fr; gap: 28px; height: 100%; }
+.cond-box { border: 1px solid var(--c-line); }
+.cond-box dl { padding: 12px 18px 16px; }
+.cond-box dt { font-weight: bold; color: var(--c-primary); margin-top: 10px; }
+.cond-box dd { margin-left: 1em; }
+.bridge-wrap { height: 100%; padding: 34px 8px 48px; }
+.bridge {
+  position: relative; height: 100%;
+  display: flex; align-items: flex-end;
+  border-bottom: 1px solid var(--c-line);
+}
+.bridge-col { flex: 1; position: relative; height: 100%; margin: 0 14px; }
+.bridge-bar {
+  position: absolute; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: bold; font-size: 16px;
+}
+.bar-minus { background: var(--c-accent); }
+.bar-plus  { background: var(--c-primary-mid); }
+.bar-total { background: var(--c-primary); }
+.bridge-name {
+  position: absolute; bottom: -44px; left: -8px; right: -8px;
+  text-align: center; font-weight: bold; font-size: 14px; line-height: 1.3;
+}
+.zero-line {
+  position: absolute; left: 0; right: 0; z-index: 1;
+  border-top: 2px dashed var(--c-gray);
+}
+.zero-line span {
+  position: absolute; right: 0; top: -22px;
+  font-size: 12px; color: var(--c-gray);
+}
+
+/* ========== 5. 価値定義（タグ付き表） ========== */
+.value-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.value-table th, .value-table td {
+  border: 1px solid var(--c-line); padding: 12px 14px;
+  text-align: left; vertical-align: top;
+}
+.value-table thead th { background: var(--c-primary); color: #fff; text-align: center; }
+.tag {
+  display: inline-block; border-radius: 999px;
+  padding: 2px 12px; margin: 2px 4px 2px 0;
+  font-size: 12.5px; font-weight: bold;
+}
+.tag-value  { background: var(--c-primary-light); color: var(--c-primary); }
+.tag-merit  { background: #e2efda; color: #375623; }
+.tag-impact { background: #fbe5d6; color: #843c0c; }
+
+/* ========== 6. 詳細整理（フェーズ別詳細表） ========== */
+.phase-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }
+.phase-table th, .phase-table td {
+  border: 1px solid var(--c-line); padding: 10px 12px; vertical-align: top;
+}
+.phase-table thead th {
+  background: var(--c-primary); color: #fff; text-align: center; padding: 8px;
+}
+.phase-table .row-head {
+  background: var(--c-primary-light); color: var(--c-primary); font-weight: bold;
+  width: 130px; text-align: center; vertical-align: middle;
+}
+.phase-table .highlight { background: #fff2cc; }
+.phase-table ul { margin-left: 1.3em; }
