@@ -2,12 +2,13 @@
   "name": "shiryo-sakusei-zenpan",
   "private": true,
   "type": "module",
-  "description": "HTML/CSS部品ベースの提案書スライド作成 → Playwright + pptxgenjs で PPTX 変換",
+  "description": "HTML/CSS部品ベースの提案書スライド作成 → Playwright + pptxgenjs / pdf-lib で PPTX・PDF 変換",
   "scripts": {
     "build": "node scripts/build-pptx.mjs",
     "catalog": "node scripts/build-pptx.mjs components"
   },
   "dependencies": {
+    "pdf-lib": "^1.17.1",
     "playwright": "^1.49.0",
     "pptxgenjs": "^3.12.0"
   }

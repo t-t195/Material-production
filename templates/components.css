@@ -62,7 +62,7 @@
   clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%,
                      calc(100% - 26px) 100%, 0 100%);
 }
-.chevron--dim { background: var(--c-line); }
+.chevron--dim { background: var(--c-line); color: var(--c-text); }
 .chevron .sub { display: block; font-weight: normal; font-size: 12.5px; margin-top: 4px; }
 .scope-frame {
   position: absolute; border: 3px solid var(--c-accent); pointer-events: none;
@@ -144,6 +144,65 @@
 .tag-value  { background: var(--c-primary-light); color: var(--c-primary); }
 .tag-merit  { background: #e2efda; color: #375623; }
 .tag-impact { background: #fbe5d6; color: #843c0c; }
+
+/* ========== 7. 章扉（目次の現在章ハイライト） ========== */
+.toc-wrap {
+  height: 100%; width: 100%; max-width: 1100px; margin: 0 auto;
+  display: flex; flex-direction: column; justify-content: center; gap: 20px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 26px;
+  padding: 20px 36px; border: 1px solid var(--c-line);
+  color: var(--c-gray); font-size: 21px;
+}
+.toc-item .toc-no {
+  flex: none; width: 44px; text-align: center;
+  font-weight: bold; font-size: 24px;
+}
+.toc-item.active {
+  background: var(--c-primary); border-color: var(--c-primary);
+  color: #fff; font-weight: bold;
+}
+
+/* ========== 8. 比較表（◎○△×＋推奨バッジ） ========== */
+.compare-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }
+.compare-table th, .compare-table td {
+  border: 1px solid var(--c-line); padding: 12px 14px;
+  text-align: center; vertical-align: middle;
+}
+.compare-table thead th { background: var(--c-primary); color: #fff; padding: 10px; }
+.compare-table .row-head {
+  background: var(--c-primary-light); color: var(--c-primary);
+  font-weight: bold; width: 170px;
+}
+.compare-table td.reco { background: var(--c-primary-light); }
+.compare-table .mark { display: block; font-size: 26px; font-weight: bold; line-height: 1.3; }
+.mark-best { color: var(--c-primary-mid); }
+.mark-worst { color: var(--c-accent); }
+.reco-badge {
+  display: inline-block; margin-left: 10px; padding: 2px 12px;
+  background: var(--c-accent); color: #fff;
+  font-size: 13px; font-weight: bold; border-radius: 999px; vertical-align: middle;
+}
+
+/* ========== 9. FAQ（想定問答） ========== */
+.faq-list {
+  display: flex; flex-direction: column; gap: 18px;
+  height: 100%; justify-content: space-between;
+}
+.faq-item { border: 1px solid var(--c-line); }
+.faq-q {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--c-primary-light); color: var(--c-primary);
+  padding: 10px 16px; font-weight: bold; font-size: 16px;
+}
+.faq-a { display: flex; gap: 14px; padding: 12px 16px; }
+.q-badge, .a-badge {
+  flex: none; width: 42px; text-align: center;
+  color: #fff; font-weight: bold; font-size: 14px; padding: 2px 0;
+}
+.q-badge { background: var(--c-primary); }
+.a-badge { background: var(--c-gray); align-self: flex-start; }
 
 /* ========== 6. 詳細整理（フェーズ別詳細表） ========== */
 .phase-table { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }
