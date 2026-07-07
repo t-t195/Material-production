@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>現状業務の構造整理</title>
+<link rel="stylesheet" href="../../templates/base.css">
+<link rel="stylesheet" href="../../templates/components.css">
+</head>
+<body>
+<div class="slide">
+  <div class="stamp">貴社限り</div>
+  <header class="slide-header">
+    <h1 class="slide-title">現状業務の構造整理</h1>
+  </header>
+  <p class="slide-message">受発注業務は3部門にまたがり、手作業による転記が月あたり延べ120時間発生している</p>
+  <main class="slide-body">
+    <table class="struct-table">
+      <colgroup>
+        <col style="width:56px"><col style="width:200px"><col><col style="width:420px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="border:none; background:#fff"></th>
+          <th class="col-head">業務</th>
+          <th class="col-head">現状の運用</th>
+          <th class="col-head">課題</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="vhead" rowspan="2">受注</th>
+          <td>注文受付</td>
+          <td>FAX・メールで受領し、担当者が基幹システムへ手入力している</td>
+          <td class="issue">転記ミスが月平均12件発生</td>
+        </tr>
+        <tr>
+          <td>納期回答</td>
+          <td>在庫担当へ電話で確認のうえ、営業担当が個別に回答している</td>
+          <td class="issue">回答まで平均2営業日を要する</td>
+        </tr>
+        <tr>
+          <th class="vhead" rowspan="2">出荷<br>請求</th>
+          <td>出荷指示</td>
+          <td>Excelの指示書を印刷し、倉庫へFAXで送付している</td>
+          <td class="issue">二重出荷・出荷漏れの温床</td>
+        </tr>
+        <tr>
+          <td>請求処理</td>
+          <td>月末に出荷実績と受注台帳を手作業で突合し、請求書を発行している</td>
+          <td class="issue">月末月初に残業が集中</td>
+        </tr>
+        <tr>
+          <th class="vhead" rowspan="2">在庫</th>
+          <td>在庫照会</td>
+          <td>拠点ごとのExcel台帳を電話・メールで個別に照会している</td>
+          <td class="issue">全社の在庫総量を誰も把握していない</td>
+        </tr>
+        <tr>
+          <td>棚卸</td>
+          <td>年2回、拠点業務を止めて実地棚卸を行っている</td>
+          <td class="issue">帳簿と実在庫の差異が常態化</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer class="slide-footer">
+    <span>出所: 貴社ヒアリング結果を元に当社作成</span>
+    <span class="page-no">3</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>投資対効果の試算</title>
+<link rel="stylesheet" href="../../templates/base.css">
+<link rel="stylesheet" href="../../templates/components.css">
+</head>
+<body>
+<div class="slide">
+  <div class="stamp">貴社限り</div>
+  <header class="slide-header">
+    <h1 class="slide-title">投資対効果の試算</h1>
+  </header>
+  <p class="slide-message">初期投資1,200万円に対し年間約500万円の効果を見込み、3年目での投資回収を想定する</p>
+  <main class="slide-body">
+    <div class="roi-layout">
+      <div>
+        <div class="box-head">試算条件</div>
+        <div class="cond-box" style="border-top:none;">
+          <dl>
+            <dt>初期投資</dt>
+            <dd>システム構築・導入支援費用 計1,200万円</dd>
+            <dt>対象範囲</dt>
+            <dd>受注〜請求の基幹業務（3部門・約25名）</dd>
+            <dt>効果算定の前提</dt>
+            <dd>転記・突合作業 月120時間の自動化（人件費単価 3,500円/時）</dd>
+            <dd>入力ミスに起因する手戻り・値引き対応の削減</dd>
+            <dd>納期回答の即日化による失注機会の低減</dd>
+            <dt>年間効果額 / 算定期間</dt>
+            <dd>約500万円/年 × 3年間で評価</dd>
+          </dl>
+        </div>
+        <p class="note" style="margin-top:10px;">※ 効果額は概算値。Phase 1 の業務量調査にて精緻化する</p>
+      </div>
+      <div class="bridge-wrap">
+        <p class="note" style="text-align:right; margin-bottom:4px;">（単位: 万円）</p>
+        <div class="bridge" style="height:calc(100% - 24px);">
+          <div class="zero-line" style="bottom:60%;"><span>損益分岐（±0）</span></div>
+          <div class="bridge-col">
+            <div class="bridge-bar bar-minus" style="bottom:0; height:60%;">▲1,200</div>
+            <div class="bridge-name">初期投資</div>
+          </div>
+          <div class="bridge-col">
+            <div class="bridge-bar bar-plus" style="bottom:0; height:25%;">+500</div>
+            <div class="bridge-name">効果<br>1年目</div>
+          </div>
+          <div class="bridge-col">
+            <div class="bridge-bar bar-plus" style="bottom:25%; height:25%;">+500</div>
+            <div class="bridge-name">効果<br>2年目</div>
+          </div>
+          <div class="bridge-col">
+            <div class="bridge-bar bar-plus" style="bottom:50%; height:25%;">+500</div>
+            <div class="bridge-name">効果<br>3年目</div>
+          </div>
+          <div class="bridge-col">
+            <div class="bridge-bar bar-total" style="bottom:60%; height:15%;">+300</div>
+            <div class="bridge-name">累計収支<br>（3年間）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="slide-footer">
+    <span>出所: 貴社ヒアリング結果を元に当社試算</span>
+    <span class="page-no">6</span>
+  </footer>
+</div>
+</body>
+</html>
